@@ -7,7 +7,27 @@ output: html_document
 #Chloe Pham 
 #Q1 & Q2
 ```{r}
-
+#1
+library(ggplot2)
+load("~/final_gr19/ThreeCancers.RData")
+#i) 587 subjects
+nrow(GeneExp)
+#ii) 100
+ncol(GeneExp)
+#iii) 7.311357
+mean(GeneExp$Gene2)
+#iv) 
+ggplot(data=GeneExp, mapping=aes(x=Gene45, y=Gene68)) +
+geom_point()
+#v) 0.9159255
+cor.test(x=GeneExp$Gene45,y=GeneExp$Gene68, method="pearson")
+#2
+#i)
+boxplot(GeneExp$Gene15 ~ CancerType, col = c("red",
+"green", "blue"), ylab= "Gene15")
+#ii)the red box represents the interquartile range (middle 50%), aka the patients with BRCA and have Gene15 expression levels of approximately 4 to 6.
+#iii) BRCA and KIRC have outliers. 
+#iv) KIRC has the smallest median expression level.
 ```
 
 #Pamela Garcia 
