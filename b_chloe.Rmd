@@ -1,8 +1,24 @@
 ---
-title: "b_chloe"
-author: "Chloe Pham"
+title: "final_g19"
+author: "Chloe Pham, Carolina Flores, Pamela Garcia"
 date: "5/9/2022"
 output: html_document
 ---
+#Chloe Pham 
+#Q1 & Q2
+```{r}
 
+```
+
+#Pamela Garcia 
+#Q3 & Q4
+```{r}
+
+```
+
+#Carolina Flores
+#Q5
+```{r}
+
+```
 
