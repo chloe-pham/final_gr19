@@ -44,7 +44,48 @@ boxplot(GeneExp$Gene15 ~ CancerType, col = c("red",
 #Pamela Garcia 
 #Q3 & Q4
 ```{r}
+#Q3
+y = as.numeric(CancerType == 'KIRC')
 
+# (i) 
+set.seed(10)
+x <- GeneExp$Gene15
+noise <- rnorm(n= 30, mean = 0, sd = .1)
+y = as.numeric(CancerType == 'KIRC')
+
+df <- data.frame(list(explanatory= x, observed_val = y))
+plot(x = x, y= y)
+lines(x = x, y =  as.numeric(CancerType == 'KIRC'))
+
+fit <- lm(formula = observed_val ~ explanatory, data = df)
+summary(fit)
+
+plot(x = x, y= y)
+# plot estimated function
+lines(x = x, y =  0.599 + .07*x, col = "red")
+# plot true function
+lines(x = x, y = 0.6 + 0.1*x, col = "blue")
+
+# (ii)
+  # (a) The estimated coefficient of the Gene15 variable is 0.599
+  # (b) The p-value associated to the coefficient is 1.1e-15
+  # (c) The p-value corresponds to the null hypothesis that gene expression of gene 15 and a patient having KIRC cancer do not correlate.
+  # (d) We can conclude that, based on the p-value, the null hypothesis is rejected. The expression of gene 15 and a patient having KIRC cancer how correlation.
+
+# (iii) B0 is 0.6 and B1 is 0.1
+
+#Q4
+# (i)
+set.seed(1)
+data <- GeneExp
+gene.kmeans = kmeans(x = data, centers = 3)
+
+# (ii)
+table(gene.kmeans$cluster, CancerType)
+
+# (iii) Cluster 2 best represents patients with KIRC cancer
+
+# (iv) Cluster 2 best represents the gene expression profile of a KIRC patient, while Cluster 1 from the k-means result shows the gene expression profile of a LUAD patient. 
 ```
 
 #Carolina Flores
