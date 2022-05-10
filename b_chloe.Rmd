@@ -19,6 +19,43 @@ output: html_document
 #Carolina Flores
 #Q5
 ```{r}
+#Q5
+#i)
+GeneExp.dist = dist(x=GeneExp[1:10,], method='euclidean')
 
+#ii)
+gene.hclust = hclust(d=GeneExp.dist, method='complete')
+
+#iii)
+GeneExp.dist.mat = as.matrix(GeneExp.dist)
+#print(GeneExp.dist.mat)
+
+#iv)
+x = GeneExp.dist.mat[1,]
+y = GeneExp.dist.mat[2,]
+
+
+d_ist = x-y
+d_ist = d_ist^2
+d_ist = sum(d_ist)
+d_ist = sqrt(d_ist)
+
+
+#v)
+z = GeneExp[1,]
+a = GeneExp[2,]
+
+euc_d = sqrt(sum((z-a)^2))
+
+#vi)
+#Subject 9 has the smallest distance to Subject 5 
+
+#vii)
+# Two linkage criteria's are 
+#1. Average 
+#2. Single
+
+#viii)
+#Using complete linkage the distance from subject 6 to the sub cluster containing subject 1 and 10 is the maximum distance in the cluster being 17.99.
 ```
 
