@@ -9,7 +9,6 @@ output: html_document
 ```{r}
 #1
 library(ggplot2)
-load("~/final_gr19/ThreeCancers.RData")
 
 #i) 587 subjects
 nrow(GeneExp)
